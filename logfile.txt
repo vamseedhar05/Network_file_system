@@ -1,0 +1,229 @@
+Client thread created.
+Client thread created.
+Client thread created.
+Naming Server initialized.
+Client thread created.
+Number of Clients connected (1) > Maximum number of Clients (1)
+Naming Server initialized.
+Storage server thread created.
+Received storage server details: SS_Port =8080, IP=127.0.0.1, Base_path=/home/cherry/E2_1/OSN/main-project/final-project-62/src/storage_server
+Storage server thread created.
+Received storage server details: SS_Port =0, IP=, Base_path=
+Storage server thread created.
+Received storage server details: SS_Port =0, IP=, Base_path=
+Storage server thread created.
+Received storage server details: SS_Port =0, IP=, Base_path=
+Storage server thread created.
+Received storage server details: SS_Port =0, IP=, Base_path=
+Storage server thread created.
+Received storage server details: SS_Port =0, IP=, Base_path=
+Storage server thread created.
+Received storage server details: SS_Port =0, IP=, Base_path=
+Storage server thread created.
+Received storage server details: SS_Port =0, IP=, Base_path=
+Storage server thread created.
+Received storage server details: SS_Port =0, IP=, Base_path=
+Client thread created.
+Received request: Type=READ, Path=/storage_server/storage_server.h, Dest_path=None
+-----File storage_server.h has been READ Successfully-----
+Client thread created.
+Received request: Type=COPY, Path=/storage_server/storage_server.h, Dest_path=/storage_server/hi.txt
+-----Failed to Copy file storage_server.h-----
+Client thread created.
+Received request: Type=, Path=, Dest_path=
+Naming Server initialized.
+Storage server thread created.
+Received storage server details: SS_Port =8080, IP=127.0.0.1, Base_path=/home/cherry/E2_1/OSN/main-project/final-project-62/src/storage_server
+Storage server thread created.
+Received storage server details: SS_Port =0, IP=, Base_path=
+Storage server thread created.
+Received storage server details: SS_Port =0, IP=, Base_path=
+Client thread created.
+Received request: Type=READ, Path=/storage_server/storage_server.h, Dest_path=None
+-----File storage_server.h has been READ Successfully-----
+Client thread created.
+Received request: Type=COPY, Path=/storage_server/storage_server.h, Dest_path=/storage_server/hi.txt
+-----Failed to Copy file storage_server.h-----
+Client thread created.
+Storage server thread created.
+Received storage server details: SS_Port =0, IP=, Base_path=
+Received request: Type=READ, Path=/storage_server/storage_server.h, Dest_path=None
+-----File storage_server.h has been READ Successfully-----
+Client thread created.
+Received request: Type=COPY, Path=/storage_server/storage_server.h, Dest_path=/storage_server/hi.txt
+-----Failed to Copy file storage_server.h-----
+Client thread created.
+Naming Server initialized.
+Naming Server initialized.
+Naming Server initialized.
+Storage server thread created.
+Received storage server details: SS_Port =8080, IP=127.0.0.1, Base_path=/home/cherry/E2_1/OSN/main-project/final-project-62/src/storage_server
+Storage server thread created.
+Received storage server details: SS_Port =0, IP=, Base_path=
+Storage server thread created.
+Received storage server details: SS_Port =0, IP=, Base_path=
+Client thread created.
+Received request: Type=READ, Path=/storage_server/storage_server.h, Dest_path=None
+-----File storage_server.h has been READ Successfully-----
+Client thread created.
+Received request: Type=COPY, Path=/storage_server/storage_server.h, Dest_path=/storage_server/hi.txt
+-----File storage_server.h Copy Successfully-----
+Client thread created.
+Received request: Type=, Path=, Dest_path=
+Naming Server initialized.
+Storage server thread created.
+Received storage server details: SS_Port =8080, IP=127.0.0.1, Base_path=/home/cherry/E2_1/main-project/final-project-62/src/storage_server
+Storage server thread created.
+Received storage server details: SS_Port =0, IP=, Base_path=
+Storage server thread created.
+Received storage server details: SS_Port =0, IP=, Base_path=
+Client thread created.
+Received request: Type=READ, Path=/storage_server/storage_server.h, Dest_path=None
+-----File storage_server.h has been READ Successfully-----
+Number of Clients connected (2) >= Maximum number of Clients (2)
+Naming Server initialized.
+Storage server thread created.
+Received storage server details: SS_Port =8080, IP=127.0.0.1, Base_path=/home/cherry/E2_1/main-project/final-project-62/src/storage_server
+Storage server thread created.
+Received storage server details: SS_Port =0, IP=, Base_path=
+Storage server thread created.
+Naming Server initialized.
+Client thread created.
+Received request: Type=READ, Path=/storage_server/storage_server.h, Dest_path=None
+Client thread created.
+Storage server thread created.
+Received storage server details: SS_Port =8080, IP=127.0.0.1, Base_path=/home/cherry/E2_1/main-project/final-project-62/src/storage_server
+Storage server thread created.
+Naming Server initialized.
+Storage server thread created.
+Received storage server details: SS_Port =8080, IP=127.0.0.1, Base_path=/home/cherry/E2_1/main-project/final-project-62/src/storage_server
+Client thread created.
+Received request: Type=READ, Path=/storage_server/storage_server.h, Dest_path=None
+-----File storage_server.h has been READ Successfully-----
+Number of Clients connected (2) >= Maximum number of Clients (2)
+Naming Server initialized.
+Storage server thread created.
+Received storage server details: SS_Port =8080, IP=127.0.0.1, Base_path=/home/cherry/E2_1/main-project/final-project-62/src/storage_server
+Client thread created.
+Received request: Type=READ, Path=/storage_server/storage_server.h, Dest_path=None
+-----File storage_server.h has been READ Successfully-----
+Client thread created.
+Naming Server initialized.
+Storage server thread created.
+Received storage server details: SS_Port =8080, IP=127.0.0.1, Base_path=/home/cherry/E2_1/OSN/final-project-62/src/storage_server
+Storage server thread created.
+Storage server thread created.
+Storage server thread created.
+Naming Server initialized.
+Naming Server initialized.
+Storage server thread created.
+Received storage server details: SS_Port =8080, IP=127.0.0.1, Base_path=/home/cherry/E2_1/OSN/final-project-62/src/storage_server
+Storage server thread created.
+Storage server thread created.
+Naming Server initialized.
+Naming Server initialized.
+Naming Server initialized.
+Storage server thread created.
+Received storage server details: SS_Port =8080, IP=127.0.0.1, Base_path=/home/cherry/E2_1/OSN/final-project-62/src/storage_server
+Naming Server initialized.
+Naming Server initialized.
+Storage server thread created.
+Received storage server details: SS_Port =8080, IP=127.0.0.1, Base_path=/home/cherry/E2_1/OSN/final-project-62/src/storage_server
+Storage server thread created.
+Storage server thread created.
+Client thread created.
+Received request: Type=READ, Path=/storage_server/storage_server.h, Dest_path=None
+-----File storage_server.h has been READ Successfully-----
+Client thread created.
+Received request: Type=CREATE, Path=/storage_server/testing.txt, Dest_path=None
+-----File testing.txt Created Successfully-----
+Client thread created.
+Naming Server initialized.
+Storage server thread created.
+Received storage server details: SS_Port =8080, IP=127.0.0.1, Base_path=/home/cherry/E2_1/OSN/final-project-62/src/storage_server
+Storage server thread created.
+Storage server thread created.
+Client thread created.
+Received request: Type=READ, Path=/storage_server/storage_server.h, Dest_path=None
+-----File storage_server.h has been READ Successfully-----
+Client thread created.
+Received request: Type=CREATE, Path=/storage_server/king.txt, Dest_path=None
+-----File king.txt Created Successfully-----
+Client thread created.
+Received request: Type=DELETE, Path=/storage_server/king.txt, Dest_path=None
+Naming Server initialized.
+Storage server thread created.
+Received storage server details: SS_Port =8080, IP=127.0.0.1, Base_path=/home/cherry/E2_1/OSN/final-project-62/src/storage_server
+Storage server thread created.
+Storage server thread created.
+Client thread created.
+Received request: Type=CREATE, Path=/storage_server/name.txt, Dest_path=None
+-----File name.txt Created Successfully-----
+Client thread created.
+Received request: Type=DELETE, Path=/storage_server/name.txt, Dest_path=None
+-----File name.txt Deleted Successfully-----
+Client thread created.
+Received request: Type=READ, Path=/storage_server/storage_server.h, Dest_path=None
+-----File storage_server.h has been READ Successfully-----
+Client thread created.
+Received request: Type=READ, Path=/storage_server/storage_server.h, Dest_path=None
+Client thread created.
+Naming Server initialized.
+Naming Server initialized.
+Storage server thread created.
+Received storage server details: SS_Port =8080, IP=127.0.0.1, Base_path=/home/cherry/E2_1/OSN/final-project-62/src/storage_server
+Storage server thread created.
+Storage server thread created.
+Client thread created.
+Received request: Type=READ, Path=/storage_server/storage_server.h, Dest_path=None
+-----File storage_server.h has been READ Successfully-----
+Client thread created.
+Received request: Type=READ, Path=/storage_server/storage_server.h, Dest_path=None
+Naming Server initialized.
+Naming Server initialized.
+Storage server thread created.
+Received storage server details: SS_Port =8080, IP=127.0.0.1, Base_path=/home/cherry/E2_1/OSN/final-project-62/src/storage_server
+Storage server thread created.
+Storage server thread created.
+Client thread created.
+Received request: Type=READ, Path=/storage_server/storage_server.h, Dest_path=None
+-----File storage_server.h has been READ Successfully-----
+Client thread created.
+Received request: Type=READ, Path=/storage_server/storage_server.h, Dest_path=None
+-----File storage_server.h has been READ Successfully-----
+Client thread created.
+Received request: Type=READ, Path=/storage_server/storage_server.h, Dest_path=None
+Naming Server initialized.
+Storage server thread created.
+Received storage server details: SS_Port =8080, IP=127.0.0.1, Base_path=/home/cherry/E2_1/OSN/final-project-62/src/storage_server
+Storage server thread created.
+Storage server thread created.
+Client thread created.
+Received request: Type=READ, Path=/storage_server/storage_server.h, Dest_path=None
+-----File storage_server.h has been READ Successfully-----
+Client thread created.
+Received request: Type=READ, Path=/storage_server/storage_server.h, Dest_path=None
+-----File storage_server.h has been READ Successfully-----
+Client thread created.
+Received request: Type=READ, Path=/storage_server/storage_server.h, Dest_path=None
+Naming Server initialized.
+Storage server thread created.
+Received storage server details: SS_Port =8080, IP=127.0.0.1, Base_path=/home/cherry/E2_1/OSN/final-project-62/src/storage_server
+Storage server thread created.
+Storage server thread created.
+Client thread created.
+Received request: Type=READ, Path=/storage_server/storage_server.h, Dest_path=None
+-----File storage_server.h has been READ Successfully-----
+Client thread created.
+Received request: Type=READ, Path=/storage_server/storage_server.h, Dest_path=None
+-----File storage_server.h has been READ Successfully-----
+Client thread created.
+Received request: Type=READ, Path=/storage_server/storage_server.h, Dest_path=None
+Naming Server initialized.
+Storage server thread created.
+Received storage server details: SS_Port =8080, IP=127.0.0.1, Base_path=/home/cherry/E2_1/OSN/final-project-62/src/storage_server
+Storage server thread created.
+Storage server thread created.
+Client thread created.
+Client thread created.
+Client thread created.
