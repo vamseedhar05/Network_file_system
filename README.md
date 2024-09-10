@@ -1,62 +1,79 @@
-# Network File System.
+# Network File System (NFS)
 
 ## Overview
-- This NFS implementation consists of three major components: Clients, Naming Server, and Storage Servers.
-- Clients interact with the NFS to perform various file-related operations, while the Naming Server acts as a central hub for coordinating communication between clients and storage servers. 
-- Storage Servers handle the physical storage and retrieval of files, ensuring data persistence and distribution across the network.
-- Clients can also interact directly with the Storage Server
+This NFS implementation consists of three major components: 
+1. **Clients**: Interact with the NFS to perform file operations.
+2. **Naming Server (NM)**: Acts as a central hub, coordinating communication between clients and storage servers.
+3. **Storage Servers (SS)**: Handle the physical storage, retrieval of files, and ensure data persistence and distribution across the network.
+
+Clients can either interact directly with the Storage Servers or via the Naming Server, which maps client requests to the appropriate storage resources.
+
+---
 
 ## Major Components
-### Initialising Naming Server
-- We first initialise the Naming Server , which serves as central coordination point in NFS.The port for Naming Server is assumed to be constant.
-- The Naming Server is responsible for mapping client requests to the appropriate Storage Server.
 
-### Initialising Storage Server
-- All the Storage Servers are initialised and accessable paths for each Storage Server are given as user input.The details of the SS are sent to the NM which are stored in `Trie` for faster Search operation.
-- The details of SS include `Port Number` , `Path` , `ipAddress` , `accessable paths` , `No of accessable paths` ,`replicable port number`. 
-- We can add a new SS at any point of time by executing the SS file in the respective directory and define a unique port for the new SS.
+### 1. Initializing Naming Server
+- The **Naming Server (NM)** serves as the central coordination point in NFS. The port for the NM is assumed to be constant.
+- It is responsible for mapping client requests to the correct Storage Server for execution.
 
-### Commands By NM to SS:
-- NM can issue Create / Delete / Copy files or directories.
-- Create : execute the 
+### 2. Initializing Storage Servers
+- **Storage Servers (SS)** are initialized by providing accessible paths as user input. 
+- Details of each SS (e.g., Port Number, IP Address, Accessible Paths, Replication Port) are registered with the NM and stored in a `Trie` for efficient searching.
+- New Storage Servers can be added dynamically by executing the SS file and assigning a unique port for each new SS.
 
-### Commands By Clients to SS
-- If the commands are READ , WRITE or FILEINFO then the command is executed directly by the SS.
-- In the above case the Client sends the request to the NM and NM sends the correct SS ip & port number to which the CLient connects and waits for execution of the command and waits for the ACK from the SS.
-- If the commands are CREATE , DELETE or COPY then the command is sent to NM . Once the NM determines the correct SS the command is forwarded to the correct SS and waits for the acknowledgement.
-- After the execution of the command SS sends an ACK to the NM which in turn sends it to the Client providing it the status of the task.
-- Error code is printed in the Client if there is any error while performing the command.
+### 3. Commands Issued by Naming Server to Storage Servers
+The NM can issue the following file-related commands to SS:
+- **CREATE**: Creates a file or directory.
+- **DELETE**: Deletes a file or directory.
+- **COPY**: Copies files or directories between storage servers.
 
-### Multiple Clients 
-- NFS design accomodates multiple clients attempting to connect to NM simultaneously.
-- We can achieve this using threads and  an initial and final ACK from the relevant SS are employed.
-- Only 1 Client can write at a time in a file so in order to achieve this we use a write_lock to avoid WRITE by multiple Clients.
-- Also while 1 client is writing no other Client can read the file so here we use the flag `write_flag`.Make it 1 when we start writing and 0 when writing to file stops.We don't read the file when `write_flag` is 1.
+### 4. Commands Issued by Clients to Storage Servers
+- For **READ**, **WRITE**, and **FILEINFO** commands, clients interact directly with the Storage Servers.
+- For commands like **CREATE**, **DELETE**, and **COPY**, the client sends the request to the NM. The NM determines the correct SS, forwards the command, and waits for an acknowledgment (ACK) from the SS, which is then passed back to the client.
+- In case of errors during command execution, the client will display the appropriate error code.
 
-### Error Codes
-- Various error codes are employed within the NFS system to communicate issues and exceptional scenarios between clients and the NFS components (Naming Server, Storage Servers). 
-- These error codes enhance the clarity of error messages and assist in troubleshooting potential problems.
+---
 
-### Search in NM
-- In order to reduce the time complexity of the Search operations while inserting the details of SS we are inserting them into `Trie` which has faster Search than Linear Searches.
-- Also we have implemented `LRU` cache in NM using `Linked Lists`.When Client requests data from a particular `SS` we search first in the `LRU` cache.
-- If `SS` is present in `LRU` then it's brought to the front of the `Linked List` , if it's not present in `LRU` then it searches in the `Trie` and also inserts into the `LRU` at the front.
+## Multiple Clients
+- The NFS design supports multiple clients connecting to the NM simultaneously.
+- **Threading** is used to handle multiple client connections efficiently.
+- Only one client can write to a file at any given time. This is enforced using a `write_lock` to prevent concurrent write operations.
+- While a client is writing, other clients are prevented from reading the file by using a `write_flag`. The flag is set to `1` when writing starts and set to `0` when writing stops, ensuring consistency between read and write operations.
 
-### Redundancy / Replication:
-- Replicated storage servers after every initialisation.
-- Updated every change that happened to storage server to every other replicated servers.
-- if any one of the storage server is disconnected then the naming server tries to connect with the replicated servers.
-- if the storage server connects again, then naming server reconnects to the storage server by disconnecting to its replicas.
+---
 
+## Error Codes
+- A variety of error codes are implemented to communicate issues between clients, the NM, and SS components.
+- These codes are used to enhance clarity and help in troubleshooting potential problems, ensuring smooth operation and better debugging.
 
-### Bookkeeping
-- Each and every port connection is stored in the `log`.
-- After each SS is initialised the details of the `SS` are writen to the file.
-- After the Client sends for request NM records the data sent by the Client.
-- After the execution of the command , the Status of the command is recorded into the file.
+---
 
+## Efficient Search in Naming Server
+- **Trie Structure**: To speed up search operations when looking for SS details, a `Trie` is used in the NM. This improves search efficiency compared to linear searches.
+- **LRU Cache**: The NM also implements an **LRU (Least Recently Used)** cache using linked lists. 
+   - When a client requests data from a particular SS, the system first searches the LRU cache.
+   - If the SS is found in the cache, it is moved to the front of the linked list.
+   - If not found, the system searches the `Trie`, and the SS is then added to the LRU cache.
 
-## ASSUMPTIONS:
-- ip to be constant for NM and SS.
-- For each Storage Server unique Client Port number is given as command line argument .
+---
+
+## Redundancy and Replication
+- **Replicated Storage Servers**: After initialization, storage servers are replicated.
+- **Synchronization**: Every change made to a storage server is replicated across all other replicas to ensure data consistency.
+- **Failover**: If a storage server disconnects, the NM automatically connects to its replica to maintain service availability.
+- **Reconnection**: If the original storage server reconnects, the NM will switch back from the replica to the original server.
+
+---
+
+## Bookkeeping
+- Every port connection and communication event is logged for auditing purposes.
+- After each SS is initialized, its details (e.g., port number, paths, etc.) are written to a file.
+- The NM logs all client requests, and after each command is executed, the result is recorded in a status log.
+- This bookkeeping ensures traceability and helps in monitoring and debugging the system.
+
+---
+
+## Assumptions
+- The IP addresses for the NM and SS are assumed to be constant.
+- Each Storage Server is assigned a unique client port number, provided as a command-line argument during initialization.
 
